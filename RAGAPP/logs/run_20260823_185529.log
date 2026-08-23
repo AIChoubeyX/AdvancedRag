@@ -1,0 +1,43 @@
+2026-08-23 18:55:36,729 | INFO | hr_assistant.pipeline | Building HR assistant...
+2026-08-23 18:55:36,731 | INFO | hr_assistant.pipeline | No Qdrant Cloud collection found, building one from scratch
+2026-08-23 18:55:36,731 | INFO | hr_assistant.document_loader | Loading document from 'data\hr_policy.txt'
+2026-08-23 18:55:36,736 | INFO | hr_assistant.document_loader | Loaded 1 document(s)
+2026-08-23 18:55:36,738 | INFO | hr_assistant.splitter | Split document(s) into 9 chunk(s)
+2026-08-23 18:55:36,742 | INFO | hr_assistant.embeddings | Initializing embeddings model 'jina-embeddings-v2-base-en'
+2026-08-23 18:55:39,113 | INFO | faiss.loader | Loading faiss with AVX2 support.
+2026-08-23 18:55:39,113 | INFO | faiss.loader | Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2026-08-23 18:55:39,113 | INFO | faiss.loader | Loading faiss.
+2026-08-23 18:55:39,364 | INFO | faiss.loader | Successfully loaded faiss.
+2026-08-23 18:55:39,804 | INFO | hr_assistant.agent | Creating HR agent with 1 tool(s)
+2026-08-23 18:55:39,826 | INFO | hr_assistant.agent | HR agent ready
+2026-08-23 18:55:39,826 | INFO | hr_assistant.pipeline | HR assistant is ready to take questions
+2026-08-23 18:55:52,977 | INFO | __main__ | === Streamlit run: new question received ===
+2026-08-23 18:55:53,583 | INFO | httpx | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-23 18:55:53,615 | INFO | hr_assistant.tools | search_hr_policy called with query: leave policy
+2026-08-23 18:55:58,117 | INFO | hr_assistant.tools | Found 3 matching chunk(s)
+2026-08-23 18:55:58,686 | INFO | httpx | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-23 18:56:16,717 | INFO | __main__ | === Streamlit run: new question received ===
+2026-08-23 18:56:17,246 | INFO | httpx | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-23 20:56:38,361 | INFO | __main__ | === Streamlit run: new question received ===
+2026-08-23 20:56:39,523 | INFO | httpx | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-23 20:56:39,629 | INFO | hr_assistant.tools | search_hr_policy called with query: how many leaves are allowed in a year
+2026-08-23 20:56:42,508 | INFO | hr_assistant.tools | Found 3 matching chunk(s)
+2026-08-23 20:56:43,159 | INFO | httpx | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-23 20:57:02,923 | INFO | __main__ | === Streamlit run: new question received ===
+2026-08-23 20:57:03,599 | INFO | httpx | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-23 20:57:15,194 | INFO | __main__ | === Streamlit run: new question received ===
+2026-08-23 20:57:15,927 | INFO | httpx | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-23 20:57:37,736 | INFO | __main__ | === Streamlit run: new question received ===
+2026-08-23 20:57:38,335 | INFO | httpx | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-23 20:57:38,337 | INFO | hr_assistant.tools | search_hr_policy called with query: Rohit Sharma
+2026-08-23 20:57:38,843 | INFO | hr_assistant.tools | Found 3 matching chunk(s)
+2026-08-23 20:57:39,371 | INFO | httpx | HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-08-23 20:59:30,876 | ERROR | asyncio | Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\ashut\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\events.py", line 88, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\ashut\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
