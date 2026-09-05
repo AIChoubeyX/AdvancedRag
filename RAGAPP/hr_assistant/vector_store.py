@@ -7,12 +7,17 @@ from hr_assistant import config
 from hr_assistant.embeddings import get_embeddings_model
 from hr_assistant.logger import get_logger
 
+logger = get_logger(__name__)
+
 # Build vector store usjng FAISS and Jina embeddings
 
 def build_vector_store(chunks):
     """ Embed every chunk and build  searchable FAISS index in memory. """
+    logger.info("Embedding %d chunk(s) and building FAISS index in memory" , len(chunks))
     embeddings_model = get_embeddings_model()
-    return FAISS.from_documents(chunks, embeddings_model)
+    vector_store = FAISS.from_documents(chunks, embeddings_model)
+    logger.info("FAISS index built in memory")
+    return vector_store
 
 
 # save vector store
@@ -32,4 +37,5 @@ def vector_store_exists(path: str = config.VECTOR_STORE_PATH) -> bool:
 
 def get_retriever(vector_store , k: int = config.TOP_K_RESULTS):
     """ Return a retriever that can be used to query the vector store. """
+    logger.info("Returning retriever for vector store with top_k=%d" , k)
     return vector_store.as_retriever(search_kwargs={"k": k})
