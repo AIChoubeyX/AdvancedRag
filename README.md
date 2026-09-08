@@ -48,6 +48,7 @@ NOTES/                   reference PDFs
    ```
    uv venv ragenv
    ragenv\Scripts\activate
+   python -m streamlit run RAGAPP/app.py
    ```
 3. Install dependencies:
    ```

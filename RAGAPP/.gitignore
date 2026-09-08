@@ -2,4 +2,13 @@ basicragenv
 
 .env
 
+# Python caches and compiled files
+__pycache__/
+*.py[cod]
+
+# Local runtime output
+logs/
+*.tldr
+
+# Local vector index
 data\faiss_index
