@@ -32,7 +32,9 @@ LANGSMITH_PROJECT = os.getenv("LANGSMITH_PROJECT")
 
 ## DEFINE PATH - DATA / VECTOR STORE 
 
-DATA_FILE_PATH = os.path.join("data", "hr_policy.txt")
+# Resolve paths relative to RAGAPP directory (parent of hr_assistant/)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA_FILE_PATH = os.path.join(BASE_DIR, "data", "hr_policy.txt")
 
 ## VECTORE STORES 
 
@@ -40,10 +42,10 @@ DATA_FILE_PATH = os.path.join("data", "hr_policy.txt")
 # persistent memory - vectors # 100gb - ingestion 
 # cloud memory 
 
-# QDRANT_URL = os.getenv("QDRANT_URL")
-# QDRANT_API_KEY = os.getenv("QDRANT_API_KEY")
-# QDRANT_COLLECTION_NAME = os.getenv("QDRANT_COLLECTION_NAME", "hr_policy")
-VECTOR_STORE_PATH = os.path.join("data", "vector_store")
+QDRANT_URL = os.getenv("QDRANT_URL")
+QDRANT_API_KEY = os.getenv("QDRANT_API_KEY")
+QDRANT_COLLECTION_NAME = os.getenv("QDRANT_COLLECTION_NAME", "hr_policy")
+VECTOR_STORE_PATH = os.path.join(BASE_DIR, "data", "vector_store")
 ## MODELS 
 # LLM and EMBEDING MODEL 
 
